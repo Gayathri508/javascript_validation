@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LoginPage</title>
+<script>
+function validateform(){
+var z=document.forms["myform"]["email"].value;
+var a=document.forms["myform"]["password"].value;
+if(z==" "||a==" "){
+	alert("All fields are required");
+	return false;
+}
+if(a.length<8){
+	alert("Password has atleast 8 characters");
+}
+}
+</script>
+<style>
+.button{
+  background-color: #D193EC;
+   width: 60px;
+  height: 30px;
+  border-radius: 20px;
+
+}
+</style>
+</head>
+<body>
+<h1 style="background-color:#D193EC;text-align :center;color:#ffffff">Login Form</h1>
+<center>
+<img src="image.png" height="280px" width="300px">
+</center>
+<br>
+<center>
+<div class="container">
+<form id="myform" onsubmit="return validateform()">
+E-Mail  :<input type="email" name="email" placeholder="enter emailid">
+<br>
+<br>
+Password  :<input type="password" name="password" placeholder="**********">
+<br>
+<br>
+<button class="button">Register</button>
+</form>
+</center>
+</body>
+</html>

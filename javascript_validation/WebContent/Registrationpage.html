@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>RegistrationPage</title>
+<script>
+function validateform(){
+	var x=document.forms["myform"]["firstname"].value;
+	var y=document.forms["myform"]["lastname"].value;
+	var z=document.forms["myform"]["email"].value;
+	var a=document.forms["myform"]["password"].value;
+	var b=document.forms["myform"]["phoneno"].value;
+	if(x==" "||y=="  "||z==" "||a==" "||b==" "){
+		alert("All fields are required");
+		return false;
+	}
+	if(x.length<3){
+		alert("Name should contain more that three characters");
+		return false;
+	}
+	for(var i=0;i<x.length;i++){
+		if(x[i]<'a'||x[i]>'z'){
+			alert("Name should contain only alphabets");
+			return false;
+		}
+	}
+	if(a.length<8){
+		alert("Password should contains atleast 8 characters");
+	}
+	if(b.length<10){
+		alert("phone number should contain 10 digits");
+		return false;
+	}
+}
+</script>
+<Style>
+.button{
+  background-color: #D193EC;
+   width: 60px;
+  height: 30px;
+  border-radius: 20px;
+
+}
+</Style>
+</head>
+<body>
+<h1 style="background-color:#D193EC;text-align :center;color:#ffffff">Registration Form</h1>
+<center>
+<img src="image.png" height="280px" width="300px">
+</center>
+<br>
+<center>
+<div class="container">
+<form id="myform" onsubmit="return validateform()">
+First Name :<input type="text" name="firstname" placeholder="enter first  name">
+<br>
+<br>
+Last Name :<input type="text" name="lastname" placeholder="enter last name">
+<br>
+<br>
+E-Mail  :<input type="email" name="email" placeholder="enter emailid">
+<br>
+<br>
+Password  :<input type="password" name="password" placeholder="**********">
+<br>
+<br>
+Phone Number :<input type="phoneno" name="phoneno" placeholder="phone no">
+<br>
+<br>
+Branch :<select name="branch">
+<option value="cse">CSE</option>
+<option value="ece">ECE</option>
+<option value="eee">EEE</option>
+<option value="civil">CIVIL</option>
+<option value="mech">MECH</option>
+</select>
+<br>
+<br>
+Year :<select name="year">
+<option value="1">I</option>
+<option value="2">II</option>
+<option value="3">III</option>
+<option value="4">IV</option>
+</select>
+<br>
+<br>
+<button class="button">Register</button>
+</form> 
+</center>
+</div>
+</body>
+</html>
